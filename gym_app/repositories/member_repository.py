@@ -10,4 +10,17 @@ def save(member):
     id = results[0]['id']
     member.id = id
     return member
-    
+
+
+def select(id):
+    pass
+
+def select_all():
+    pass
+
+def delete(id):
+    pass
+
+def delete_all():
+    pass
+
