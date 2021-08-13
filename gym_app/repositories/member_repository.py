@@ -11,9 +11,14 @@ def save(member):
     member.id = id
     return member
 
-
 def select(id):
-    pass
+    member = None
+    sql = "SELECT * FROM members WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    if result:
+        member = Member(result['name'], result['premium'], result['id'])
+    return member
 
 def select_all():
     pass

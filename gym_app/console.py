@@ -9,6 +9,9 @@ import repositories.booking_repository as booking_repo
 
 members = [("Cathal Wilson", True), ("Derek Bracken", False), ("Sean Hollywood", False)]
 
+member_repo.delete_all()
+
+
 for member in members:
     new_member = Member(member[0], member[1])
     member_repo.save(new_member)
