@@ -7,7 +7,8 @@ import repositories.member_repository as member_repo
 import repositories.session_repository as session_repo
 import repositories.booking_repository as booking_repo
 
-members = [("Cathal Wilson", True), ("Derek Bracken", False), ("Sean Hollywood", False)]
+members = [("Cathal Wilson", True), ("Derek Bracken", False),
+           ("Sean Hollywood", False)]
 
 member_repo.delete_all()
 

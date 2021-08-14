@@ -9,6 +9,5 @@ from tests.repositories_test.member_repository_test import TestMemberRepository
 from tests.repositories_test.session_repository_test import TestSessionRepository
 
 
-
 if __name__ == '__main__':
     unittest.main()
