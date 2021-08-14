@@ -34,7 +34,3 @@ class TestMemberRepository(unittest.TestCase):
     @unittest.skip("Delete to run the test")
     def test_sessions(self):
         pass
-
-    @unittest.skip("Delete to run the test")
-    def test_save_member(self):
-        pass
