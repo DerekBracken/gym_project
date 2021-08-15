@@ -13,7 +13,13 @@ def save(session):
     return session
 
 def select(id):
-    pass
+    session = None
+    sql = "SELECT * FROM sessions WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    if result:
+        session = Session(result['name'], result['description'], result['time'], result['day'], result['capacity'])
+    return session
 
 def select_all():
     pass
