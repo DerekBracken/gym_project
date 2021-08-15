@@ -23,3 +23,7 @@ class TestMember(unittest.TestCase):
     # @unittest.skip("Delete this line to run the test")
     def test_has_id(self):
         self.assertEqual(10, self.member2.id)
+
+    @unittest.skip("Delete this line to run the test")
+    def test_update_premium(self):
+        pass
