@@ -11,3 +11,9 @@ def save(session):
     id = results[0]['id']
     session.id = id
     return session
+
+def select(id):
+    pass
+
+def select_all():
+    pass
