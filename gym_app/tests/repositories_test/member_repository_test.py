@@ -16,13 +16,18 @@ class TestMemberRepository(unittest.TestCase):
         member = member_repo.select(members[-1].id) 
         self.assertEqual("Kathryn McVitie", member.name)
 
-    @unittest.skip("Delete to run the test")
+    # @unittest.skip("Delete to run the test")
     def test_select(self):
-        pass
+        member1 = Member("Kathryn McVitie")
+        member_repo.save(member1)
+        members = member_repo.select_all()  
+        member = member_repo.select(members[-1].id) 
+        self.assertEqual("Kathryn McVitie", member.name)
 
-    @unittest.skip("Delete to run the test")
+    # @unittest.skip("Delete to run the test")
     def test_select_all(self):
-        pass
+        members = member_repo.select_all()
+        self.assertEqual(2, len(members))
 
     # @unittest.skip("Delete to run the test")
     def test_delete(self):
@@ -32,9 +37,11 @@ class TestMemberRepository(unittest.TestCase):
         members_after = member_repo.select_all()  
         self.assertEqual(len(members_after), len(members_before)-1) 
 
-    @unittest.skip("Delete to run the test")
+    # @unittest.skip("Delete to run the test")
     def test_delete_all(self):
-        pass
+        member_repo.delete_all()
+        members = member_repo.select_all()
+        self.assertEqual(0, len(members))
 
     @unittest.skip("Delete to run the test")
     def test_update(self):
