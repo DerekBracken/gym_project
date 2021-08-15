@@ -22,4 +22,11 @@ def select(id):
     return session
 
 def select_all():
-    pass
+    sessions = []
+    sql = "SELECT * FROM sessions"
+    results = run_sql(sql)
+    for row in results:
+        session = Session(row['name'], row['description'], row['time'], row['day'], row['capacity'], row['id'])
+        sessions.append(session)
+    return sessions
+
