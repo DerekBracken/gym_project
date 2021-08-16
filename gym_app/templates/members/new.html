@@ -3,24 +3,22 @@
 
 <h2>Add a New Member</h2>
 
-<form action="/members" method="POST">
-    <div>
+<div class="div-format">
+    <form action="/members" method="POST">
         <label for="first_name">First Name:</label>
         <input type="text" id="first_name" name="first_name">
+        <br>
         <label for="last_name">Last Name:</label>
         <input type="text" id="last_name" name="last_name">
-    </div>
-    <div>
+        <br>
         <label for="membership">Membership:</label>
-
         <input type="radio" id="membership" name="membership" value="True">
         <label for="premium">Premium</label>
         <input type="radio" id="membership" name="membership" value="False">
-        <label for="standard">Standard</label><br>
-    </div>
-    <input type="submit" value="Submit">
-
-</form>
-
+        <label for="standard">Standard</label>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
 
 {% endblock %}

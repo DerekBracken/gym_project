@@ -30,3 +30,20 @@ section, table {
     display: flex;
     flex-direction: column;
 }
+
+label{
+    text-align: right;
+    width: 200px;
+    position:left;
+}
+
+form {
+    padding:20px;
+    margin:auto;
+    width:600px;
+}
+
+.div-format {
+    border: 1px solid #ccc;
+    width: 100%;
+}

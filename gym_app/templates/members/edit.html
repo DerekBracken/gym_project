@@ -2,23 +2,25 @@
 {% block content %}
 
 <h2>Member</h2>
+<div class="div-format">
+    <form>
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" value="{{ member.first_name }}">
+            <br>
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" value="{{ member.last_name }}">
+            <br>
+            <label for="membership">Membership:</label>
+            <input type="radio" id="membership" name="membership" value="True"> 
+            <label for="premium">Premium</label>
+            <input type="radio" id="membership" name="membership" value="False">
+            <label for="standard">Standard</label>
+            <br>
+    </form>
+</div>
 
 <form action="/members/{{ member.id }}" method="POST">
-    <div>
-        <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name" value="{{ member.first_name }}">
-        <label for="last_name">Last Name:</label>
-        <input type="text" id="last_name" name="last_name" value="{{ member.last_name }}">
-    </div>
-    <div>
-        <label for="membership">Membership:</label>
-
-        <input type="radio" id="membership" name="membership" value="True">
-        <label for="premium">Premium</label>
-        <input type="radio" id="membership" name="membership" value="False">
-        <label for="standard">Standard</label><br>
-    </div>
-    <input type="submit" value="Update">
+        <input type="submit" value="Update">
 </form>
 <form action="/members/{{ member.id }}/delete" method="POST">
     <input type="submit" value="Delete">
