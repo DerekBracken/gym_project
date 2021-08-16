@@ -21,3 +21,15 @@ def new_booking():
     sessions = session_repo.select_all()
     return render_template("bookings/new.html", members=members, sessions=sessions)
 
+
+# CREATE
+@bookings_blueprint.route("/bookings", methods=["POST"])
+def create_booking():
+    member_id = request.form["member_id"]
+    session_id = request.form["session_id"]
+    member = member_repo.select(member_id)
+    session = session_repo.select(session_id)
+    new_booking = Booking(member, session)
+    booking_repo.save(new_booking)
+    return redirect("/bookings")
+
