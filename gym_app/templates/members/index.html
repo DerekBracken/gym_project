@@ -7,7 +7,7 @@
 
 <section>
     <p>Name :</p>
-    <a href="/members/{{ member.id}}/edit">{{ member.name }}</a>
+    <a href="/members/{{ member.id}}/edit">{{ member.first_name }}{{member.last_name}}</a>
     <p>Membership :</p>
     {% if member.premium %}
         <p>Premium</p>

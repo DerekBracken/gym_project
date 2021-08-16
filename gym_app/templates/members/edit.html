@@ -5,8 +5,10 @@
 
 <form action="/members/{{ member.id }}" method="POST">
     <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="{{ member.name }}">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" value="{{ member.first_name }}">
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" value="{{ member.last_name }}">
     </div>
     <div>
         <label for="membership">Membership:</label>

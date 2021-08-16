@@ -5,8 +5,8 @@ from models.session import Session
 
 
 def save(member):
-    sql = "INSERT INTO members (name, premium) VALUES (%s, %s) RETURNING *"
-    values = [member.name, member.premium]
+    sql = "INSERT INTO members (first_name, last_name, premium) VALUES (%s, %s, %s) RETURNING *"
+    values = [member.first_name, member.last_name, member.premium]
     results = run_sql(sql, values)
     id = results[0]['id']
     member.id = id
@@ -19,7 +19,7 @@ def select(id):
     values = [id]
     result = run_sql(sql, values)[0]
     if result:
-        member = Member(result['name'], result['premium'], result['id'])
+        member = Member(result['first_name'], result['last_name'], result['premium'], result['id'])
     return member
 
 
@@ -28,7 +28,7 @@ def select_all():
     sql = "SELECT * FROM members"
     results = run_sql(sql)
     for row in results:
-        member = Member(row['name'], row['premium'], row['id'])
+        member = Member(row['first_name'], row['last_name'], row['premium'], row['id'])
         members.append(member)
     return members
 
@@ -45,8 +45,8 @@ def delete_all():
 
 
 def update(member):
-    sql = "UPDATE members SET (name, premium) = (%s, %s) WHERE id = %s"
-    values = [member.name, member.premium, member.id]
+    sql = "UPDATE members SET (first_name, last_name premium) = (%s, %s, %s) WHERE id = %s"
+    values = [member.first_name, member.last_name, member.premium, member.id]
     run_sql(sql, values)
 
 
