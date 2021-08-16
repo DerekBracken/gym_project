@@ -18,7 +18,6 @@ def new_member():
     return render_template("members/new.html", title='Add Member')
 
 
-
 # CREATE
 @members_blueprint.route("/members", methods=["POST"])
 def create_member():
@@ -35,6 +34,7 @@ def edit_member(id):
     member = member_repo.select(id)
     return render_template('members/edit.html', member=member)
 
+
 # UPDATE
 @members_blueprint.route("/members/<id>", methods=["POST"])
 def update_member(id):
@@ -44,9 +44,9 @@ def update_member(id):
     member_repo.update(member)
     return redirect("/members")
 
+
 # DELETE
 @members_blueprint.route("/members/<id>/delete", methods=["POST"])
 def delete_member(id):
     member_repo.delete(id)
     return redirect("/members")
-

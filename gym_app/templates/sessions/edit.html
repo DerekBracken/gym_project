@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Session </h2>
+
+<form id="edit-session" action="/sessions/{{ session.id }}" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ session.name }}">
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" value="{{ session.description }}">
+        <label for="time">Time:</label>
+        <input type="text" id="time" name="time" value="{{ session.time }}">
+        <label for="day">Day:</label>
+        <input type="text" id="day" name="day" value="{{ session.day }}">
+        <label for="capacity">Capacity:</label>
+        <input type="text" id="capacity" name="capacity" value="{{ session.capacity }}">
+    </div>
+
+    <input type="submit" value="Update">
+</form>
+<form action="/sessions/{{ session.id }}/delete" method="POST">
+    <input type="submit" value="Delete">
+</form>
+
+
+{% endblock %}

@@ -6,8 +6,24 @@
 {% for session in sessions %}
 
 <section>
-    <p>{{ session.name }}</p>
+    <p>Name :</p>
+    <a href="/sessions/{{ session.id}}/edit">{{ session.name }}</a>
+    <p>Description:</p>
+    <p>{{session.description}}</p>
+    <p>Time</p>
+    <p>{{session.time}}</p>
+    <p>Day</p>
+    <p>{{session.day}}</p>
+    <p>Capacity</p>
+    <p>{{session.capacity}}</p>
 </section>
 
 {% endfor %}
+
+
+<form action="/sessions/new">
+    <input type="submit" value="New Session">
+</form>
+
 {% endblock %}
+

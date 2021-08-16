@@ -17,3 +17,8 @@ section {
     flex-direction: row;
     justify-content: center;
 }
+
+.edit-session {
+    display: flex;
+    flex-direction: column;
+}
