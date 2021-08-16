@@ -33,3 +33,12 @@ def create_booking():
     booking_repo.save(new_booking)
     return redirect("/bookings")
 
+
+# EDIT
+@bookings_blueprint.route("/bookings/<id>/edit")
+def edit_booking(id):
+    booking = booking_repo.select(id)
+    members = member_repo.select_all()
+    sessions = session_repo.select_all()
+    return render_template('bookings/edit.html', booking=booking, members=members, sessions=sessions)
+
