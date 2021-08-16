@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Bookings</h2>
+
+{% for booking in bookings %}
+
+<section>
+    <p>Booking id:</p>
+    <a href="/bookings/{{ booking.id}}/edit">{{ booking.id }}</a>
+    
+    <p>Session id:</p>
+    <a href="/sessions/{{ booking.session.id}}/edit">{{ booking.session.id }}</a>
+
+    <p>Member id:</p>
+    <a href="/members/{{ booking.member.id}}/edit">{{ booking.member.id }}</a>
+
+</section>
+
+{% endfor %}
+
+
+<form action="/bookings/new">
+    <input type="submit" value="New Booking">
+</form>
+
+{% endblock %}
+
