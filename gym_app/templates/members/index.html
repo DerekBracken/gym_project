@@ -7,7 +7,7 @@
 
 <section>
     <p>Name :</p>
-    <p>{{ member.name }},   </p>
+    <a href="/members/{{ member.id}}/edit">{{ member.name }}</a>
     <p>Membership :</p>
     {% if member.premium %}
         <p>Premium</p>
@@ -17,4 +17,10 @@
 </section>
 
 {% endfor %}
+
+
+<form action="/members/new">
+    <input type="submit" value="New Member">
+</form>
+
 {% endblock %}

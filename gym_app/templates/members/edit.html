@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add a New Member</h2>
+
+<form action="/members/{{ member.id }}" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ member.name }}">
+    </div>
+    <div>
+        <label for="membership">Membership:</label>
+
+        <input type="radio" id="membership" name="membership" value="True">
+        <label for="premium">Premium</label>
+        <input type="radio" id="membership" name="membership" value="False">
+        <label for="standard">Standard</label><br>
+    </div>
+    <input type="submit" value="Update">
+</form>
+<form action="/members/{{ member.id }}/delete" method="POST">
+    <input type="submit" value="Delete">
+</form>
+
+
+{% endblock %}
