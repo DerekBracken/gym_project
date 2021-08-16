@@ -18,11 +18,18 @@ session_repo.save(session2)
 session3 = Session("Weights", "Group weight session", "12:00", "Thursday", 10)
 session_repo.save(session3)
 
-members = [("Cathal Wilson", True), ("Derek Bracken", False),
-           ("Sean Hollywood", False)]
+member1 = Member("Cathal Wilson", True)
+member_repo.save(member1)
+member2 = Member("Derek Bracken", False)
+member_repo.save(member2)
+member3 = Member("Sean Hollywood", False)
+member_repo.save(member3)
 
-for member in members:
-    new_member = Member(member[0], member[1])
-    member_repo.save(new_member)
+booking1 = Booking(member1, session1)
+booking_repo.save(booking1)
+booking2 = Booking(member2, session2)
+booking_repo.save(booking2)
+booking3 = Booking(member3, session3)
+booking_repo.save(booking3)
 
 pdb.set_trace()
