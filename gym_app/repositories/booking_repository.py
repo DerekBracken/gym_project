@@ -14,7 +14,14 @@ def save(booking):
     booking.id = id
 
 def select(id):
-    pass
+    sql = "SELECT * FROM bookings WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    member = member_repo.select(result["member_id"])
+    session = session_repo.select(result["session_id"])
+    booking = Booking(member, session, result["id"])
+    return booking
+
 
 def select_all():
     bookings = []
@@ -28,10 +35,15 @@ def select_all():
     return bookings
 
 def delete(id):
-    pass
+    sql = "DELETE FROM bookings WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 
 def delete_all():
-    pass
+    sql = "DELETE FROM bookings"
+    run_sql(sql)
 
 def update(booking):
-    pass
+    sql = "UPDATE bookings SET (member_id, session_id) = (%s, %s) WHERE id = %s"
+    values = [booking.member.id, booking.session.id, booking.id]
+    run_sql(sql, values)
