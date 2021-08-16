@@ -13,3 +13,11 @@ def bookings():
     bookings = booking_repo.select_all()
     return render_template("bookings/index.html", bookings=bookings)
 
+
+# NEW
+@bookings_blueprint.route("/bookings/new")
+def new_booking():
+    members = member_repo.select_all()
+    sessions = session_repo.select_all()
+    return render_template("bookings/new.html", members=members, sessions=sessions)
+
