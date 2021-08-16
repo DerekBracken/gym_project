@@ -18,7 +18,7 @@ def select(id):
     values = [id]
     result = run_sql(sql, values)[0]
     if result:
-        session = Session(result['name'], result['description'], result['time'], result['day'], result['capacity'])
+        session = Session(result['name'], result['description'], result['time'], result['day'], result['capacity'], result['id'])
     return session
 
 def select_all():
@@ -43,3 +43,6 @@ def update(session):
     sql = "UPDATE sessions SET (name, description, time, day, capacity) = (%s, %s, %s, %s, %s) WHERE id = %s"
     values = [session.name, session.description, session.time, session.day, session.capacity, session.id]
     run_sql(sql, values)
+
+def members(session):
+    pass

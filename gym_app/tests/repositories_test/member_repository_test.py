@@ -5,9 +5,6 @@ from models.member import Member
 
 class TestMemberRepository(unittest.TestCase):
 
-    def setUp(self):
-        pass
-
     # @unittest.skip("Delete to run the test")
     def test_save(self):  
         member1 = Member("Kathryn McVitie")
