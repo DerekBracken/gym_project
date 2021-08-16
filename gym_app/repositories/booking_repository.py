@@ -43,7 +43,7 @@ def delete_all():
     sql = "DELETE FROM bookings"
     run_sql(sql)
 
-def update(booking):
+def update(booking): # TODO needed/ test
     sql = "UPDATE bookings SET (member_id, session_id) = (%s, %s) WHERE id = %s"
     values = [booking.member.id, booking.session.id, booking.id]
     run_sql(sql, values)
