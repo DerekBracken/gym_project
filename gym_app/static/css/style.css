@@ -11,12 +11,20 @@ li {
 .container {
     text-align: center;
 }
-
-section {
+/* Section needed? */
+section, table {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
+/* table, below  */
+ th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 25px;
+  }
 
 .edit-session {
     display: flex;
