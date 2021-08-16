@@ -6,7 +6,14 @@
 {% for member in members %}
 
 <section>
-    <p>{{ member.name }}</p>
+    <p>Name :</p>
+    <p>{{ member.name }},   </p>
+    <p>Membership :</p>
+    {% if member.premium %}
+        <p>Premium</p>
+    {% else %}
+        <p>Standard</p>
+    {% endif %}
 </section>
 
 {% endfor %}

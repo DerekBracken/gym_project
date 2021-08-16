@@ -11,8 +11,6 @@ app.register_blueprint(members_blueprint)
 app.register_blueprint(sessions_blueprint)
 
 
-
-
 @app.route("/")
 def main():
     return render_template('index.html')
