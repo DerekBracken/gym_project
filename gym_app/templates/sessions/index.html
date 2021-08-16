@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Classes</h2>
+
+{% for session in sessions %}
+
+<section>
+    <p>{{ session.name }}</p>
+</section>
+
+{% endfor %}
+{% endblock %}
