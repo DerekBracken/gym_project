@@ -9,6 +9,7 @@
         <th>First Name</th>
         <th>Last Name</th>
         <th>Membership</th>
+        <th>Classes</th>
     </tr>
 
         <tr>
@@ -20,7 +21,15 @@
             {% else %}
                 <td>Standard</td>
             {% endif %}
+            <td>
+                <select name="session_id" id="session">
+                    {% for session in sessions %}
+                    <option value="{{ session.id }}">{{ session.name }}</option>
+                    {% endfor %}
+                  </select>
+            </td>
         </tr>
+
 
 
 
