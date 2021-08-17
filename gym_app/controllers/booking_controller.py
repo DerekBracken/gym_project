@@ -55,10 +55,18 @@ def update_booking(id):
     return redirect("/bookings")
 
 
-# DELETE
-@bookings_blueprint.route("/bookings/delete", methods=["POST"])
-def delete_booking():
+# DELETE MEMBER
+@bookings_blueprint.route("/bookings/member/delete", methods=["POST"])
+def delete_member_from_booking():
     booking_id = request.form['booking_id']
     booking = booking_repo.select(booking_id)
     booking_repo.delete(booking_id)
     return redirect(f"/members/{booking.member.id}/edit")
+
+#DELETE SESSION
+@bookings_blueprint.route("/bookings/session/delete", methods=['POST'])
+def delete_session_from_booking():
+    booking_id = request.form['booking_id']
+    booking = booking_repo.select(booking_id)
+    booking_repo.delete(booking_id)
+    return redirect(f"/sessions/{ booking.session.id }/edit")

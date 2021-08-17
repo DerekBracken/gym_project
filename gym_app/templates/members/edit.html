@@ -19,7 +19,7 @@
             <input type="submit" value="Update">
     </form>
 
-    <form action="/bookings/delete" method="post">      
+    <form action="/bookings/member/delete" method="post">      
          <select name="booking_id" id="booking">
             {% for booking in bookings %}
                 <option value="{{ booking.id }}">{{ booking.session.name }}</option>

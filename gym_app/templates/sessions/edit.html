@@ -23,10 +23,10 @@
     <input type="submit" value="Update">
 </form>
 
-<form action="/bookings/delete" method="post">      
+<form action="/bookings/session/delete" method="post">      
     <select name="booking_id" id="booking">
        {% for booking in bookings %}
-           <option value="{{ booking.id }}">{{ booking.member.first_name }}{{ " " }}{{ booking.member.first_name }}</option>
+           <option value="{{ booking.id }}">{{ booking.member.first_name }}{{ " " }}{{ booking.member.last_name }}</option>
        {% endfor %}
    </select>
    <input type="submit" value="Remove Member">
