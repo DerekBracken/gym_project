@@ -45,4 +45,14 @@ def update(session):
     run_sql(sql, values)
 
 def members(session):
-    pass
+    members = []
+
+    sql = "SELECT members.* FROM members INNER JOIN bookings ON bookings.member_id = members.id WHERE session_id = %s"
+    values = [session.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        member = Member(row['first_name'], row['last_name'], row['premium'], row['id'])
+        members.append(member)
+
+    return members
