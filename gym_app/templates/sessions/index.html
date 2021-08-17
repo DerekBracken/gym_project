@@ -15,7 +15,9 @@
 
     {% for session in sessions %}
         <tr>
-            <td><a href="/sessions/{{ session.id}}/edit">{{ session.id }}</a></td>
+            <td>
+                <a href="/sessions/{{ session.id}}/show">{{ session.id }}</a>
+            </td>
             <td>{{ session.name }}</td>
             <td>{{ session.description }}</td>
             <td>{{ session.time }}</td>
@@ -28,7 +30,7 @@
 
 
 <form action="/sessions/new">
-    <input type="submit" value="New Session">
+    <input type="submit" value="Add New Session">
 </form>
 
 {% endblock %}

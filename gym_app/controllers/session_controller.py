@@ -36,7 +36,7 @@ def create_session():
 def show_session(id):
     session = session_repo.select(id)
     members = session_repo.members(session)
-    return render_template('members/show.html', session=session, members=members)
+    return render_template('sessions/show.html', session=session, members=members)
 
 # EDIT
 @sessions_blueprint.route("/sessions/<id>/edit")

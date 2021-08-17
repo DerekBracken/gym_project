@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Members</h2>
+<h2>Session</h2>
 
 <table>
     <tr>
@@ -34,7 +34,7 @@
 
 
 </table>
-<form action="/members/{{ member.id}}/edit">
+<form action="/sessions/{{ session.id}}/edit">
     <input type="submit" value="Update Session">
 </form>
 
