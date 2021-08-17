@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Members</h2>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Time</th>
+        <th>Day</th>
+        <th>Capacity</th>
+        <th>Members</th>
+    </tr>
+
+        <tr>
+            <td>{{ session.id }}</td>
+            <td>{{ session.name }}</td>
+            <td>{{ session.description }}</td>
+            <td>{{ session.time }}</td>
+            <td>{{ session.day }}</td>
+            <td>{{ session.capacity }}</td>
+            <td>
+                <select name="member_id" id="member">
+                    {% for member in members %}
+                    <option value="{{ member.id }}">{{ member.first_name }}{{ " " }}{{ member.last_name }}</option>
+                    {% endfor %}
+                  </select>
+            </td>
+        </tr>
+
+
+
+
+</table>
+<form action="/members/{{ member.id}}/edit">
+    <input type="submit" value="Update Session">
+</form>
+
+{% endblock %}
