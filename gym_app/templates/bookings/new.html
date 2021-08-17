@@ -17,7 +17,7 @@
         <label for="member">Select a member:</label>
         <select name="member_id" id="member">
           {% for member in members %}
-          <option value="{{ member.id }}">{{ member.first_name }}{{ member.last_name }}</option>
+          <option value="{{ member.id }}">{{ member.first_name }}{{" "}}{{ member.last_name }}</option>
           {% endfor %}
         </select>
 

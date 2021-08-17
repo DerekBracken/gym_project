@@ -6,5 +6,3 @@ class Member:
         self.premium = premium
         self.id = id
 
-    def full_name(self):
-        self.full_name = self.full_name + " " + self.last_name
