@@ -31,7 +31,7 @@ def create_booking():
     session = session_repo.select(session_id)
     new_booking = Booking(member, session)
     booking_repo.save(new_booking)
-    return redirect("/bookings")
+    return redirect("/bookings/new")
 
 
 # EDIT
