@@ -2,6 +2,9 @@ from db.run_sql import run_sql
 
 from models.member import Member
 from models.session import Session
+from models.booking import Booking
+import repositories.member_repository as member_repo
+import repositories.session_repository as session_repo
 
 
 def save(session):
@@ -56,3 +59,17 @@ def members(session):
         members.append(member)
 
     return members
+
+def bookings(session):
+    bookings = []
+
+    sql = "SELECT * FROM bookings WHERE session_id = %s"
+    values = [session.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        member = member_repo.select(row['member_id'])
+        booking = Booking(member, session, row['id'])
+        bookings.append(booking)
+
+    return bookings
