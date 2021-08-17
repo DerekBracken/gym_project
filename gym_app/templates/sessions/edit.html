@@ -17,10 +17,10 @@
             <input type="text" id="name" name="name" value="{{ session.name }}">
         </td>
         <td>
-            <textarea name="description" id="description" cols="30" rows="7" placeholder="{{ session.description }}"></textarea>
+            <textarea name="description" id="description" cols="30" rows="7" value="{{ session.description }}"></textarea>
         </td>
         <td>
-            <input type="text" id="time" name="time" value="{{ session.time }}">
+            <input type="time" id="time" name="time" min="09:00" max="18:00" value="{{ session.time }}">
         </td>
         <td>
             <input type="text" id="day" name="day" value="{{ session.day }}">
