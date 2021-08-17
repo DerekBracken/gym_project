@@ -2,6 +2,7 @@ from db.run_sql import run_sql
 
 from models.member import Member
 from models.session import Session
+from models.booking import Booking
 
 
 def save(member):
@@ -60,5 +61,18 @@ def sessions(member):
     for row in results:
         session = Session(row['name'], row['description'], row['time'], row['day'], row['capacity'], row['id'])
         sessions.append(session)
+
+    return sessions
+
+def bookings(member):
+    bookings = []
+
+    sql = "SELECT * FROM bookings WHERE member_id = %s"
+    values = [member.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        booking = Booking(row['member_id'], row['session_id'], row['id'])
+        bookings.append(booking)
 
     return sessions
