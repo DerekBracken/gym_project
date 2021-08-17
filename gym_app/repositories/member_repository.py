@@ -3,6 +3,9 @@ from db.run_sql import run_sql
 from models.member import Member
 from models.session import Session
 from models.booking import Booking
+import repositories.member_repository as member_repo
+import repositories.session_repository as session_repo
+
 
 
 def save(member):
@@ -72,7 +75,8 @@ def bookings(member):
     results = run_sql(sql, values)
 
     for row in results:
-        booking = Booking(row['member_id'], row['session_id'], row['id'])
+        session = session_repo.select(row['session_id'])
+        booking = Booking(member, session, row['id'])
         bookings.append(booking)
 
-    return sessions
+    return bookings

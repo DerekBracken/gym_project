@@ -20,11 +20,12 @@
     </form>
 
     <form>      
-         <select name="session_id" id="session">
-            {% for session in sessions %}
-                <option value="{{ session.id }}">{{ session.name }}</option>
+         <select name="booking_id" id="booking">
+            {% for booking in bookings %}
+                <option value="{{ booking.id }}">{{ booking.session.name }}</option>
             {% endfor %}
         </select>
+        <input type="submit" value="Remove Class">
     </form>
 
 
