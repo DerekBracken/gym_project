@@ -28,6 +28,12 @@ def create_member():
     member_repo.save(new_member)
     return redirect("/members")
 
+# SHOW
+@members_blueprint.route("/members/<id>/show")
+def show_member(id):
+    member = member_repo.select(id)
+    sessions = member_repo.sessions(member)
+    return render_template('members/show.html', member=member, sessions=sessions)
 
 # EDIT
 @members_blueprint.route("/members/<id>/edit")

@@ -14,7 +14,7 @@
     {% for member in members %}
         <tr>
             <td>
-                <a href="/members/{{ member.id}}/edit">{{ member.id }}</a>
+                <a href="/members/{{ member.id}}/show">{{ member.id }}</a>
             </td>
             <td>{{ member.first_name }}</td>
             <td>{{ member.last_name }}</td>
@@ -30,7 +30,7 @@
 </table>
 
 <form action="/members/new">
-    <input type="submit" value="New Member">
+    <input type="submit" value="Add New Member">
 </form>
 
 {% endblock %}

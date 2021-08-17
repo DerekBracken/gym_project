@@ -3,7 +3,7 @@
 
 <h2>Update Member</h2>
 <div class="div-format">
-    <form>
+    <form action="/members/{{ member.id }}" method="POST">
             <label for="first_name">First Name:</label>
             <input type="text" id="first_name" name="first_name" value="{{ member.first_name }}">
             <br>
@@ -16,12 +16,11 @@
             <input type="radio" id="membership" name="membership" value="False">
             <label for="standard">Standard</label>
             <br>
+            <input type="submit" value="Update">
     </form>
 </div>
 
-<form action="/members/{{ member.id }}" method="POST">
-        <input type="submit" value="Update">
-</form>
+
 <form action="/members/{{ member.id }}/delete" method="POST">
     <input type="submit" value="Delete">
 </form>

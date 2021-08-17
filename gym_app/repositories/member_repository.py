@@ -45,10 +45,20 @@ def delete_all():
 
 
 def update(member):
-    sql = "UPDATE members SET (first_name, last_name premium) = (%s, %s, %s) WHERE id = %s"
+    sql = "UPDATE members SET (first_name, last_name, premium) = (%s, %s, %s) WHERE id = %s"
     values = [member.first_name, member.last_name, member.premium, member.id]
     run_sql(sql, values)
 
 
 def sessions(member):
-    pass
+    sessions = []
+
+    sql = "SELECT sessions.* FROM sessions INNER JOIN bookings ON bookings.session_id = sessions.id WHERE member_id = %s"
+    values = [member.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        session = session(row['name'], row['description'], row['time'], row['day'], row['capacity'], row['id'])
+        sessions.append(session)
+
+    return sessions
