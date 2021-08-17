@@ -42,7 +42,9 @@ def show_session(id):
 @sessions_blueprint.route("/sessions/<id>/edit")
 def edit_session(id):
     session = session_repo.select(id)
-    return render_template('sessions/edit.html', session=session)
+    members = session_repo.members(session)
+    bookings = session_repo.bookings(session)
+    return render_template('sessions/edit.html', session=session, bookings=bookings, members=members)
 
 
 # UPDATE

@@ -20,9 +20,19 @@
         <label for="capacity">Capacity:</label>
         <input type="text" id="capacity" name="capacity" value="{{ session.capacity }}">
     </div>
-
     <input type="submit" value="Update">
 </form>
+
+<form action="/bookings/delete" method="post">      
+    <select name="booking_id" id="booking">
+       {% for booking in bookings %}
+           <option value="{{ booking.id }}">{{ booking.member.first_name }}{{ " " }}{{ booking.member.first_name }}</option>
+       {% endfor %}
+   </select>
+   <input type="submit" value="Remove Member">
+</form>
+
+
 <form action="/sessions/{{ session.id }}/delete" method="POST">
     <input type="submit" value="Delete">
 </form>
