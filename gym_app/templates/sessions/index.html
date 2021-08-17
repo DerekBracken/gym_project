@@ -3,22 +3,28 @@
 
 <h2>Classes</h2>
 
-{% for session in sessions %}
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Time</th>
+        <th>Day</th>
+        <th>Capacity</th>
+    </tr>
 
-<section>
-    <p>Name :</p>
-    <a href="/sessions/{{ session.id}}/edit">{{ session.name }}</a>
-    <p>Description:</p>
-    <p>{{session.description}}</p>
-    <p>Time</p>
-    <p>{{session.time}}</p>
-    <p>Day</p>
-    <p>{{session.day}}</p>
-    <p>Capacity</p>
-    <p>{{session.capacity}}</p>
-</section>
-
-{% endfor %}
+    {% for session in sessions %}
+        <tr>
+            <td><a href="/sessions/{{ session.id}}/edit">{{ session.id }}</a></td>
+            <td>{{ session.name }}</td>
+            <td>{{ session.description }}</td>
+            <td>{{ session.time }}</td>
+            <td>{{ session.day }}</td>
+            <td>{{ session.capacity }}</td>
+        </tr>
+    {% endfor %}
+    
+</table>
 
 
 <form action="/sessions/new">
