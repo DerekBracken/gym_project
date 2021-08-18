@@ -16,13 +16,33 @@ li {
 
 .container {
     text-align: center;
+    padding: 0;
+    margin: 0;
 }
+#form-container{
+    display: grid;
+    grid-template-areas:
+      'edit-form edit-form edit-form attendee-form';
+    justify-items: center;
+    
+}
+
+.edit-form{
+    grid-area: 'edit-form';
+    justify-self: center;
+}
+
+.attendee-form{
+    grid-area: 'attendee-form';
+    justify-self: center;
+}
+
 /* Section needed? */
-section, table {
+/* section, table {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-}
+    justify-content: left;
+} */
 /* table, below  */
  th, td {
     border: 1px solid black;
@@ -46,7 +66,7 @@ label{
 form {
     padding:20px;
     margin:auto;
-    width:600px;
+    /* width:600px; */
 }
 
 
@@ -75,7 +95,27 @@ body > footer {
     color: black;
   }
 
-.session-table {
-    display: flex;
-    flex-direction: row;
+/* .session-table {
+    padding: 0;
+    margin: 0;
+    width: 70%;
+    display: inline-block;
+
+} */
+
+/* #table-details{
+    width: 70%;
+} */
+
+
+#update-button{
+    color: #04AA6D;
+}
+
+#table-attendees{
+    background-color: red;
+    padding: 0;
+    margin: 0;
+    /* width: 10%; */
+    
 }
