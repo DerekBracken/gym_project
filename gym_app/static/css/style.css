@@ -2,59 +2,17 @@ body > header{
     text-align: center;
 }
 
-.menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-
-}
-
 li {
     list-style-type :none;
     padding-right: 10px;
 }
 
-.container {
-    text-align: center;
-    padding: 0;
-    margin: 0;
-}
-#form-container{
-    display: grid;
-    grid-template-areas:
-      'edit-form edit-form edit-form attendee-form';
-    justify-items: center;
-    
-}
-
-.edit-form{
-    grid-area: 'edit-form';
-    justify-self: center;
-}
-
-.attendee-form{
-    grid-area: 'attendee-form';
-    justify-self: center;
-}
-
-/* Section needed? */
-/* section, table {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-} */
-/* table, below  */
- th, td {
+th, td {
     border: 1px solid black;
     border-collapse: collapse;
     padding-left: 15px;
     padding-right: 15px;
     font-size: 25px;
-  }
-
-.edit-session {
-    display: flex;
-    flex-direction: column;
 }
 
 label{
@@ -66,16 +24,6 @@ label{
 form {
     padding:20px;
     margin:auto;
-    /* width:600px; */
-}
-
-
-body > footer {
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 70px;
 }
 
 .home-button {
@@ -93,7 +41,75 @@ body > footer {
 .home-button:hover {
     background-color: #ddd;
     color: black;
-  }
+}
+
+.table-position{
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.container {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+#form-container{
+    display: grid;
+    grid-template-areas:
+      'edit-form edit-form edit-form attendee-form';
+    justify-items: center;   
+}
+
+.edit-form{
+    grid-area: 'edit-form';
+    justify-self: center;
+}
+
+.attendee-form{
+    grid-area: 'attendee-form';
+    justify-self: center;
+}
+
+
+.edit-session {
+    display: flex;
+    flex-direction: column;
+}
+
+#update-button{
+    color: #04AA6D;
+}
+
+#table-attendees{
+    background-color: red;
+    padding: 0;
+    margin: 0;
+}
+
+body > footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+}
+
+
+
+
+
+/* section, table {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+} */
 
 /* .session-table {
     padding: 0;
@@ -106,16 +122,3 @@ body > footer {
 /* #table-details{
     width: 70%;
 } */
-
-
-#update-button{
-    color: #04AA6D;
-}
-
-#table-attendees{
-    background-color: red;
-    padding: 0;
-    margin: 0;
-    /* width: 10%; */
-    
-}
