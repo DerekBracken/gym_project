@@ -10,10 +10,10 @@
     <a href="/bookings/{{ booking.id}}/edit">{{ booking.id }}</a>
     
     <p>Session id:</p>
-    <a href="/sessions/{{ booking.session.id}}/edit">{{ booking.session.id }}</a>
+    <a href="/sessions/{{ booking.session.id}}/edit">{{ booking.session.name }}</a>
 
     <p>Member id:</p>
-    <a href="/members/{{ booking.member.id}}/edit">{{ booking.member.id }}</a>
+    <a href="/members/{{ booking.member.id}}/edit">{{ booking.member.first_name }}{{ " " }}{{ booking.member.last_name }}</a>
 
 </section>
 
