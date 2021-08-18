@@ -5,18 +5,27 @@
 
 <div class="div-format">
     <form action="/members" method="POST">
-        <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name">
-        <br>
-        <label for="last_name">Last Name:</label>
-        <input type="text" id="last_name" name="last_name">
-        <br>
-        <label for="membership">Membership:</label>
-        <input type="radio" id="membership" name="membership" value="True">
-        <label for="premium">Premium</label>
-        <input type="radio" id="membership" name="membership" value="False">
-        <label for="standard">Standard</label>
-        <br>
+        <table class="table-position">
+            <tr>
+                <th class='th-member'>First Name</th>
+                <th class='th-member'>Last Name</th>
+                <th class='th-member'>Membership</th>
+            </tr>
+            <tr>
+                <td class='td-member'>
+                    <input type="text" id="first_name" name="first_name">
+                </td>
+                <td class='td-member'>
+                    <input type="text" id="last_name" name="last_name">
+                </td>
+                <td class='td-member'>
+                    <select id="membership" name="membership">
+                        <option value="True">Premium</option>
+                        <option value="False">Standard</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
         <input type="submit" value="Submit">
     </form>
 </div>

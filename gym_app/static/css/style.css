@@ -101,6 +101,14 @@ form {
     height: 120px;
 }
 
+.th-member{
+    height: 10px;
+} 
+
+.td-member{
+    height: 80px;
+}
+
 #delete-button{
     width: 50%;
     border: none;
