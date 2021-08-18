@@ -3,7 +3,7 @@
 
 <h2>Edit a Class </h2>
 
-<form id="edit-session" action="/sessions/{{ session.id }}" method="POST">
+<form id="session-table" action="/sessions/{{ session.id }}" method="POST">
 <table>
     <tr>
         <th>Name</th>
@@ -11,7 +11,6 @@
         <th>Time</th>
         <th>Day</th>
         <th>Capacity</th>
-        <th>Attendees</th>
     </tr>
     <tr>
         <td>
@@ -38,21 +37,28 @@
         <td>
             <input type="text" id="capacity" name="capacity" value="{{ session.capacity }}">
         </td>
-        <td>
-            <form action="/bookings/session/delete" method="post">      
-                <select name="booking_id" id="booking">
-                   {% for booking in bookings %}
-                       <option value="{{ booking.id }}">{{ booking.member.first_name }}{{ " " }}{{ booking.member.last_name }}</option>
-                   {% endfor %}
-               </select>
-               <input type="submit" value="Remove Member">
-            </form>
-        </td>
     </tr>
     </table>
     <input type="submit" value="Update">
 </form>
 
+<form id="session-table" action="/bookings/session/delete" method="post">      
+<table>
+    <tr>
+    <th>Attendees</th>
+    </tr>
+    <tr>
+        <td>
+            <select name="booking_id" id="booking">
+                {% for booking in bookings %}
+                    <option value="{{ booking.id }}">{{ booking.member.first_name }}{{ " " }}{{ booking.member.last_name }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Remove Member">
+        </td>
+    </tr>
+</table>
+</form>
 
 
 

@@ -1,6 +1,12 @@
+body > header{
+    text-align: center;
+}
+
 .menu {
     display: flex;
     flex-direction: row;
+    justify-content: left;
+
 }
 
 li {
@@ -68,3 +74,8 @@ body > footer {
     background-color: #ddd;
     color: black;
   }
+
+.session-table {
+    display: flex;
+    flex-direction: row;
+}
