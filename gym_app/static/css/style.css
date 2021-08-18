@@ -84,10 +84,6 @@ form {
     flex-direction: column;
 }
 
-#update-button{
-    /* color: #04AA6D; */
-}
-
 #table-attendees{
     padding: 0;
     margin: 0;
@@ -135,8 +131,9 @@ body > footer {
 }
 
 
-
-
+/* #update-button{
+    color: #04AA6D;
+} */
 
 /* section, table {
     display: flex;
