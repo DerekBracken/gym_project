@@ -2,97 +2,55 @@
 {% block content %}
 
 <h2>Update Member</h2>
-<div class="div-format">
-    <form action="/members/{{ member.id }}" method="POST">
-            <!-- <label for="first_name">:</label> -->
-            <br>
-            <!-- <label for="last_name">:</label> -->
-            <br>
-            <!-- <label for="membership">:</label> -->
-            <input type="radio" id="membership" name="membership" value="True"> 
-            <label for="premium">Premium</label>
-            <input type="radio" id="membership" name="membership" value="False">
-            <label for="standard">Standard</label>
-            <br>
-            <input type="submit" value="Update">
-    </form>
 
-    <form action="/bookings/member/delete" method="post">      
-         <select name="booking_id" id="booking">
-            {% for booking in bookings %}
-                <option value="{{ booking.id }}">{{ booking.session.name }}</option>
-            {% endfor %}
-        </select>
-        <input type="submit" value="Remove Class">
-    </form>
-
-
-
-    <form action="/members/{{ member.id }}/delete" method="POST">
-        <input type="submit" value="Remove Member">
-    </form>
-</div>
-<br>
 <div id='form-container'>
-    <form class="edit-form session-table" action="/sessions/{{ session.id }}" method="POST">
+    <form class="edit-form session-table"  action="/members/{{ member.id }}" method="POST">
         <div class="div-table">
-    <table id='table-details'>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Membership</th>
-        </tr>
-        <tr>
-            <td>
-                <input type="text" id="first_name" name="first_name" value="{{ member.first_name }}">
-            </td>
-            <td>
-                <input type="text" id="last_name" name="last_name" value="{{ member.last_name }}">          
-            </td>
-            <td>
-                <input type="time" id="time" name="time" min="09:00" max="18:00" value="{{ session.time }}">
-            </td>
-            <td>
-                <select id="days">
-                    <option value="{{ session.day }}">{{ session.day }}</option>
-                    <option value="monday">Monday</option>
-                    <option value="tuesday">Tuesday</option>
-                    <option value="wednesday">Wednesday</option>
-                    <option value="thursday">Thursday</option>
-                    <option value="friday">Friday</option>
-                    <option value="saturday">Saturday</option>
-                    <option value="sunday">Sunday</option>
-                  </select>
-            </td>
-            <td>
-                <input type="text" id="capacity" name="capacity" value="{{ session.capacity }}">
-            </td>
-        </tr>
-        </table>
-    </div>
+            <table id='table-details'>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Membership</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="first_name" name="first_name" value="{{ member.first_name }}">
+                    </td>
+                    <td>
+                        <input type="text" id="last_name" name="last_name" value="{{ member.last_name }}">          
+                    </td>
+                    <td>
+                        <select id="membership" name="membership">
+                            <option value="{{ member.premium }}">{{ member.premium }}</option>
+                            <option value="True">Premium</option>
+                            <option value="False">Standard</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
         <input id='update-button' type="submit" value="Update Member">
     </form>
     
     <form class="attendee-form session-table" action="/bookings/session/delete" method="post">      
         <div class="div-table">
-    <table id='table-attendees'>
-        <tr>
-        <th class='th-attendees'>Attendees</th>
-        </tr>
-        <tr>
-            <td class='td-attendees'>
-                <select name="booking_id" id="booking">
-                    {% for booking in bookings %}
-                        <option value="{{ booking.id }}">{{ booking.member.first_name }}{{ " " }}{{ booking.member.last_name }}</option>
-                    {% endfor %}
-                </select>
-            </td>
-        </tr>
-    
-    </table>
-    </div>
-    <input type="submit" value="Remove Member">
-    
+            <table id='table-attendees'>
+                <tr>
+                <th>Attendees</th>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="booking_id" id="booking">
+                            {% for booking in bookings %}
+                                <option value="{{ booking.id }}">{{ booking.session.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+            
+            </table>
+        </div>
+        <input type="submit" value="Remove Class">
     </form>
     
     
