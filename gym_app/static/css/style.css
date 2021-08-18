@@ -2,6 +2,14 @@ body > header{
     text-align: center;
 }
 
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: large;
+    text-decoration: none;
+}
+
 li {
     list-style-type :none;
     padding-right: 10px;
@@ -12,7 +20,7 @@ th, td {
     border-collapse: collapse;
     padding-left: 15px;
     padding-right: 15px;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 label{
@@ -27,8 +35,7 @@ form {
 }
 
 .home-button {
-    display: block;
-    width: 100%;
+    width: 50%;
     border: none;
     background-color: #04AA6D;
     color: white;
@@ -46,12 +53,6 @@ form {
 .table-position{
     display: flex;
     justify-content: center;
-}
-
-.menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
 }
 
 .container {
@@ -98,6 +99,23 @@ form {
 
 .td-attendees{
     height: 120px;
+}
+
+#delete-button{
+    width: 50%;
+    border: none;
+    background-color: red;
+    color: white;
+    padding: 14px 28px;
+    margin-top: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#delete-button:hover {
+    background-color: #ddd;
+    color: black;
 }
 
 body > footer {

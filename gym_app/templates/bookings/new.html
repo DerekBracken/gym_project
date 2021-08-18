@@ -3,28 +3,32 @@
 
 <h2>New Booking</h2>
 
-<div class="div-format">
-    <form action="/bookings" method="POST">
-        <label for="session">Select a class:</label>
-        <select name="session_id" id="session">
-          {% for session in sessions %}
-          <option value="{{ session.id }}">{{ session.name }}</option>
-          {% endfor %}
-        </select>
-
-        <br>
-
-        <label for="member">Select a member:</label>
-        <select name="member_id" id="member">
-          {% for member in members %}
-          <option value="{{ member.id }}">{{ member.first_name }}{{" "}}{{ member.last_name }}</option>
-          {% endfor %}
-        </select>
-
-        <br>
-        <input type="submit" value="Add Booking">
-    </form>
-</div>
+<form action="/bookings" method="POST">
+  <table class="table-position">
+    <tr>
+        <th>Select a class</th>
+        <th>Select a member</th>
+    </tr>
+        <tr>
+            <td>        
+              <select name="session_id" id="session">
+                {% for session in sessions %}
+                <option value="{{ session.id }}">{{ session.name }}</option>
+                {% endfor %}
+              </select>
+            </td>
+            <td>
+              <select name="member_id" id="member">
+                {% for member in members %}
+                <option value="{{ member.id }}">{{ member.first_name }}{{" "}}{{ member.last_name }}</option>
+                {% endfor %}
+              </select>
+            </td>
+        </tr>
+  </table>
+  <br>
+  <input type="submit" value="Add Booking">
+</form>
 
 
 
