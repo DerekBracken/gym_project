@@ -84,13 +84,20 @@ form {
 }
 
 #update-button{
-    color: #04AA6D;
+    /* color: #04AA6D; */
 }
 
 #table-attendees{
-    background-color: red;
     padding: 0;
     margin: 0;
+}
+
+.th-attendees{
+    height: 10px;
+} 
+
+.td-attendees{
+    height: 120px;
 }
 
 body > footer {

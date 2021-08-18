@@ -41,17 +41,17 @@
     </tr>
     </table>
 </div>
-    <input id='update-button' type="submit" value="Update">
+    <input id='update-button' type="submit" value="Update Member">
 </form>
 
 <form class="attendee-form session-table" action="/bookings/session/delete" method="post">      
     <div class="div-table">
 <table id='table-attendees'>
     <tr>
-    <th>Attendees</th>
+    <th class='th-attendees'>Attendees</th>
     </tr>
     <tr>
-        <td>
+        <td class='td-attendees'>
             <select name="booking_id" id="booking">
                 {% for booking in bookings %}
                     <option value="{{ booking.id }}">{{ booking.member.first_name }}{{ " " }}{{ booking.member.last_name }}</option>
@@ -69,7 +69,7 @@
 
 </div>
 <form class="session-table" action="/sessions/{{ session.id }}/delete" method="POST">
-    <input id='delete-button' type="submit" value="Delete">
+    <input id='delete-button' type="submit" value="Delete Member">
 </form>
 
 
